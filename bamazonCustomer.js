@@ -68,13 +68,7 @@ function shop() {
                   return false;
                 }
             )]
-            .then(function(quantity){
-                connection.query("SELECT * FROM products", function (err, results){
-
-                }
-            }
-              }
-            ])
+         
         
 
     
