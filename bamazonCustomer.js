@@ -78,4 +78,4 @@ function shop() {
         
 
     
-    function cartTotal()
+  
