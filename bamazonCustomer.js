@@ -23,8 +23,9 @@ function shop() {
             inquirer
                 .prompt([
                     {
-                    name: 'choice',
+                    name: 'item',
                     type: 'rawlist',
+                    message: 'Which item would you like to purchase?',
                     choices: function () {
                         var itemsArray = [];
                         for (var i = 0; i < results.length; i++) {
@@ -32,15 +33,23 @@ function shop() {
                         }
                         return itemsArray;
                     },
-                    message: 'Which item would you like to purchase?',
-                }
-            ])
-        
-    
-                .then(function (answer) {
+                },
+                {
+                    name: 'qty',
+                    type: 'input',
+                    message: 'How many would you like?',
+                    choices: function(value) {
+                            if (isNaN(value) === false) {
+                              return true;
+                            }
+                            return false;
+                        }
+                    }
+                 ]) 
+                    .then(function (answer) {
                     var chosenProduct;
                     for (var i = 0; i < results.length; i++) {
-                        if (results[i].product_name === answer.choice) {
+                        if (results[i].stock_qty === answer.qty) {
                             chosenProduct = results[i];
                         }
                     }
@@ -48,26 +57,26 @@ function shop() {
             }
         )}
 
-    function howManyAvail(){
-               inquirer
-               .prompt([
-                name: "howmany",
-                type: "input",
-                choices: function () {
-                    var qtyArray = [];
-                    for (var i = 0; i < results.length; i++) {
-                        qtyArray.push(results[i].);
-                    }
-                    return itemsArray;
-                },
-                message: "How many would you like?",
-                validate: function(value) {
-                  if (isNaN(value) === false) {
-                    return true;
-                  }
-                  return false;
-                }
-            )]
+    // function howManyAvail(){
+    //            inquirer
+    //            .prompt([
+    //             name: "howmany",
+    //             type: "input",
+    //             choices: function () {
+    //                 var qtyArray = [];
+    //                 for (var i = 0; i < results.length; i++) {
+    //                     qtyArray.push(results[i].);
+    //                 }
+    //                 return itemsArray;
+    //             },
+    //             message: "How many would you like?",
+    //             validate: function(value) {
+    //               if (isNaN(value) === false) {
+    //                 return true;
+    //               }
+    //               return false;
+    //             }
+    //         )]
          
         
 
