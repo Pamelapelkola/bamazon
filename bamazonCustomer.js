@@ -24,7 +24,7 @@ function shop() {
                 .prompt([
                     {
                     name: 'item',
-                    type: 'rawlist',
+                    type: 'list',
                     message: 'Which item would you like to purchase?',
                     choices: function () {
                         var itemsArray = [];
@@ -55,14 +55,32 @@ function shop() {
                     }
                 })
             }
+            // howManyAvail();
         )}
 
     // function howManyAvail(){
-    //            inquirer
-    //            .prompt([
-    //             name: "howmany",
-    //             type: "input",
-    //             choices: function () {
+    //     connection.query("SELECT * FROM products WHERE stock_qty = ?", function (err, results){
+    //         if (err) throw err;
+    //     })
+    //     for (var i = 0; i < results.length; i++){
+    //         var qtyArray = [];
+    //         if(results[i].stock_qty <= 0)
+    //         return "This item is out of stock"
+
+    //     }else{
+    //         connection.query(
+    //             "UPDATE stock_qty SET ? WHERE ?",
+    //             [
+    //                 {
+
+    //                 },
+    //                 {
+
+    //                 },
+    //             ]
+    //         function()
+    //     }
+   
     //                 var qtyArray = [];
     //                 for (var i = 0; i < results.length; i++) {
     //                     qtyArray.push(results[i].);
