@@ -1,13 +1,13 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
-const keys = require("./keys");
-const pw = keys.password.pw;
+// const keys = require("./keys.js");
+// const pw = keys.password.pw;
 
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: pw,
+    password: 'Tyler123!',
     
     database: "bamazon_db"
 });
